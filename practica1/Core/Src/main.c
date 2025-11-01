@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
 
 /* USER CODE END Includes */
 
@@ -47,7 +48,6 @@ osThreadId Task1Handle;
 osThreadId Task2Handle;
 osSemaphoreId Binary_SemHandle;
 /* USER CODE BEGIN PV */
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -63,6 +63,7 @@ void Task2_App(void const * argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+extern void initialise_monitor_handles(void);
 
 /* USER CODE END 0 */
 
@@ -74,6 +75,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	initialise_monitor_handles();
 
   /* USER CODE END 1 */
 
@@ -97,6 +99,7 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  printf("Hello World!\n");
 
   /* USER CODE END 2 */
 
